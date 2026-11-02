@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { MessageSquare, Download } from 'lucide-react';
 import { useApp, useRows } from './AppProvider';
 import { Badge, Panel, Stat, Table } from './ui';
+import { BulkStock } from './BulkStock';
 import { dateTime, downloadCsv, inr, qty } from '@/lib/format';
 
 type Move = { id: string; created_at: string; movement_type: string; quantity_delta: number; unit_cost: number; reason: string | null; products: { sku: string; name: string } | null };
@@ -82,6 +83,8 @@ export function Stock() {
         <div className="form-actions"><button className="btn primary" disabled={busy}>Apply stock movement</button></div>
       </form>
     </Panel>}
+
+    {canWrite && <BulkStock />}
 
     <Panel title="Products In &amp; Out Movement Ledger" sub="Chronological audit trail of every unit entering or leaving your warehouse" action={<div className="row">
       <select value={filterDir} onChange={e => setFilterDir(e.target.value as 'all' | 'in' | 'out')} aria-label="Filter direction">
