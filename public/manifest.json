@@ -1,0 +1,17 @@
+{
+  "name": "Advaitum Business OS",
+  "short_name": "Advaitum OS",
+  "description": "Private ERP, Products In/Out, Sales & Expense Automation for Advaitum.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f5",
+  "theme_color": "#174f3d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
